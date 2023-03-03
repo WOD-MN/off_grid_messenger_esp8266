@@ -18,6 +18,8 @@ void setup() {
   WiFi.softAPConfig(apIP, apIP, IPAddress(255, 255, 255, 0));
   delay(100);
 
+  Serial.println("Access point IP address: " + WiFi.softAPIP().toString());
+
   // Start the server
   server.begin();
   Serial.println("Server started");
@@ -81,5 +83,3 @@ void loop() {
     client.stop();
     Serial.println("Client disconnected");
   }
-}
-
